@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- <bean id="student" class="com.lti.model.Student" scope="prototype">
+		<property name="rollNumber" value="1"/>
+		<property name="studentName" value="Jack"/>
+		<property name="studentScore" value="76"/>
+	</bean> -->
+	
+	<!-- <bean id="student" class="com.lti.model.Student" scope="prototype">
+		<constructor-arg name="rollNumber" value="1"/>
+		<constructor-arg name="studentName" value="Jack"/>
+		<constructor-arg name="studentScore" value="45"/>
+	</bean> -->
+	
+<!-- 	<bean id="student" class="com.lti.model.Student" scope="prototype" autowire="byName">
+		<constructor-arg index="0" value="1"/>
+		<constructor-arg index="1" value="Jack"/>
+		<constructor-arg index="2" value="45"/>
+		<property name="address" ref="address"></property>
+	</bean>
+	
+	<bean id="student2" class="com.lti.model.Student" scope="prototype" autowire="byType">
+		<constructor-arg index="0" value="1"/>
+		<constructor-arg index="1" value="Jack"/>
+		<constructor-arg index="2" value="45"/>
+		<property name="address" ref="address"></property>
+	</bean> -->
+
+     <bean id="student" class="com.lti.model.Student" scope="singleton" autowire="constructor">
+		<constructor-arg index="0" value="1"/>
+		<constructor-arg index="1" value="Jack"/>
+		<constructor-arg index="2" value="45"/>
+		<property name="address" ref="address"></property> 
+	</bean>
+	
+	<bean id="address" class="com.lti.model.Address" scope="singleton">
+		<property name="addressId" value="10"/>
+		<property name="city" value="Mumbai"/>
+		<property name="pin" value="410210"/>
+	</bean>
+	
+</beans>
+
